@@ -23,7 +23,8 @@ module Sidekiq
       @queued_jids = []
       @pending_jids = []
       @incremental_push = Sidekiq.options.keys.include?(:batch_push_interval)
-      @batch_push_interval = Sidekiq.options[:batch_push_interval]
+      # @batch_push_interval = Sidekiq.options[:batch_push_interval]
+      @batch_push_interval = 0
     end
 
     def description=(description)
